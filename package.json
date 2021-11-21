@@ -1,0 +1,22 @@
+{
+  "name": "ofTheFiveC4a",
+  "version": "1.0.0",
+  "description": "Este es el backend del proyecto ofTheFiveC4a",
+  "main": "index.js",
+  "repository": "https://github.com/sebas199801/ofTheFiveC4a.git",
+  "author": "Sebastian Alvarez <sebastian.alvarez.a1@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "dependencies": {
+    "apollo-server-express": "^3.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "graphql": "^16.0.1",
+    "mongoose": "^6.0.13",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  }
+}

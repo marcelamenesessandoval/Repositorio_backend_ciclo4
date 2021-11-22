@@ -13,6 +13,9 @@ type Avance {
 
 type Query{
     Avances: [Avance]
+    filtrarAvance(
+        idProyecto:String!
+    ):[Avance]
 }
 
 type Mutation{
@@ -22,6 +25,7 @@ type Mutation{
         creadoPor: String!
         proyecto: String!
     ):Avance
+
 }
 
 `;

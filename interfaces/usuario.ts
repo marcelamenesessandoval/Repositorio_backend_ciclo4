@@ -1,4 +1,4 @@
-import { enumRol, enumEstadoUsuario } from "../modelos/enums";
+import { enumRol, enumEstadoUsuario } from "../modelos/enums/enums";
 
 interface usuario {
   

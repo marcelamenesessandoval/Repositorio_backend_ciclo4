@@ -1,8 +1,8 @@
 import { Schema, model } from "mongoose";
-import { enumEstadoInscripcion } from "./enums";
-import { inscripcion } from "../interfaces/inscripcion";
-import { proyectoModelo } from "./proyectoModelo";
-import { usuarioModelo } from "./usuarioModelo";
+import { enumEstadoInscripcion } from "../enums/enums";
+import { inscripcion } from "../../interfaces/inscripcion";
+import { proyectoModelo } from "../proyecto/proyectoModelo";
+import { usuarioModelo } from "../usuario/usuarioModelo";
 
 const inscripcionSchema = new Schema<inscripcion>({
   proyecto: {

@@ -1,7 +1,8 @@
 import { Schema, model } from "mongoose";
-import { avance } from "../interfaces/avance";
-import { usuarioModelo } from "../modelos/usuarioModelo";
-import { proyectoModelo } from "../modelos/proyectoModelo";
+import { avance } from "../../interfaces/avance";
+import { usuarioModelo } from "../usuario/usuarioModelo";
+import { proyectoModelo } from "../proyecto/proyectoModelo";
+
 const avanceSchema = new Schema<avance>({
   descripcion: {
     type: String,

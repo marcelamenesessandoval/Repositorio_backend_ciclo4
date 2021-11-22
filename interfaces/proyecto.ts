@@ -3,7 +3,7 @@ import {
   enumEstadoProyecto,
   enumFase,
   enumTipoObjetivo,
-} from "../modelos/enums";
+} from "../modelos/enums/enums";
 
 interface proyecto {
   nombre: string;

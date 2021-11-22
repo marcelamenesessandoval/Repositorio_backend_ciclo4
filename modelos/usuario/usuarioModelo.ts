@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
-import { usuario } from "../interfaces/usuario";
-import { enumEstadoUsuario, enumRol } from "./enums";
+import { usuario } from "../../interfaces/usuario";
+import { enumEstadoUsuario, enumRol } from "../enums/enums";
 
 const usuarioSchema = new Schema<usuario>({
   correo: {

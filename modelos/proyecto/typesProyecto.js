@@ -1,4 +1,7 @@
-import { gql } from "apollo-server-express";
+// import { gql } from "apollo-server-express";
+
+import gql from "graphql-tag";
+
 
 const tiposProyecto = gql`
 
@@ -23,6 +26,8 @@ const tiposProyecto = gql`
     fase: enumFase!
     lider: Usuario!
     objetivos: [Objetivo]
+    avances: [Avance]
+    inscripciones: [Inscripcion]
   }
 
   type Query {

@@ -1,9 +1,11 @@
-import { Schema, model } from "mongoose";
-import { avance } from "../../interfaces/avance";
-import { usuarioModelo } from "../usuario/usuarioModelo";
-import { proyectoModelo } from "../proyecto/proyectoModelo";
+import mongoose from "mongoose";
+import { usuarioModelo } from "../usuario/usuarioModelo.js";
+import { proyectoModelo } from "../proyecto/proyectoModelo.js";
 
-const avanceSchema = new Schema<avance>({
+
+const { Schema, model } = mongoose;
+
+const avanceSchema = new Schema({
   descripcion: {
     type: String,
     required: true,
@@ -25,6 +27,6 @@ const avanceSchema = new Schema<avance>({
   },
 });
 
-const avanceModelo = model("avance", avanceSchema, "avances");
+const avanceModelo = model("Avance", avanceSchema, "Avances");
 
 export { avanceModelo };

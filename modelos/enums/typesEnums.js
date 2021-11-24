@@ -1,4 +1,7 @@
-import { gql } from "apollo-server-express";
+// import { gql } from "apollo-server-express";
+
+import gql from "graphql-tag";
+
 
 const tiposEnums = gql`
 
@@ -32,6 +35,12 @@ const tiposEnums = gql`
     ESPECIFICO 
   }
 
+
+  enum enumEstadoInscripcion{
+      ACEPTADA
+      RECHAZADA
+      PENDIENTE
+  }
   
 `;
 

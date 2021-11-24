@@ -1,16 +1,14 @@
-import { usuarioModelo } from "./usuarioModelo";
+import { usuarioModelo } from "./usuarioModelo.js";
 
 const resolversUsuario = {
   Query: {
-    // Marcela: Cuando intentaba hacer yarn start me salía un error diciendo que los parámetros
-    // eran de tipo "any" por eso tienen  :any, pero se le puede quitar y dejar (parent, args) si no se genera error
 
-    Usuarios: async (parent: any, args: any) => {
+    Usuarios: async (parent, args) => {
       const usuarios = await usuarioModelo.find();
       return usuarios;
     },
 
-    Usuario: async (parent: any, args: any) => {
+    Usuario: async (parent, args) => {
       const usuario = await usuarioModelo.findOne({_id: args._id});
       return usuario;
     },
@@ -19,7 +17,7 @@ const resolversUsuario = {
   },
 
   Mutation: {
-    crearUsuario: async (parent: any, args: any) => {
+    crearUsuario: async (parent, args) => {
       const usuarioCreado = await usuarioModelo.create({
         correo: args.correo,
         identificacion: args.identificacion,
@@ -35,7 +33,7 @@ const resolversUsuario = {
       return usuarioCreado;
     },
     
-    editarUsuario: async(parent: any, args: any) => {
+    editarUsuario: async(parent, args) => {
       const usuarioEditado = await usuarioModelo.findByIdAndUpdate( args._id,{
         correo: args.correo,
         identificacion: args.identificacion,
@@ -47,7 +45,7 @@ const resolversUsuario = {
       return usuarioEditado;
     },
 
-    eliminarUsuario: async(parent: any, args: any) => {
+    eliminarUsuario: async(parent, args) => {
       
       if (Object.keys(args).includes('_id')){
         const usuarioEliminado = await usuarioModelo.findOneAndDelete({ _id:args._id });

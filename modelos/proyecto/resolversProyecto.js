@@ -1,12 +1,10 @@
-import { proyectoModelo } from "./proyectoModelo";
+import { proyectoModelo } from "./proyectoModelo.js";
 
 const resolversProyecto = {
   Query: {
-    // Marcela: Cuando intentaba hacer yarn start me salía un error diciendo que los parámetros
-    // eran de tipo "any" por eso tienen  :any, pero se le puede quitar y dejar (parent, args) si no se genera error
 
-    Proyectos: async (parent: any, args: any) => {
-      const proyectos = await proyectoModelo.find().populate('lider');
+    Proyectos: async (parent, args) => {
+      const proyectos = await proyectoModelo.find().populate('avances').populate('inscripciones');
       return proyectos;
     },
 
@@ -14,7 +12,7 @@ const resolversProyecto = {
 
   Mutation: {
   
-    crearProyecto: async (parent: any, args: any) => {
+    crearProyecto: async (parent, args) => {
       const proyectoCreado = await proyectoModelo.create({
         nombre: args.nombre,
         presupuesto: args.presupuesto,

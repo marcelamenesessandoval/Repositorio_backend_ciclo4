@@ -1,10 +1,10 @@
-import { Schema, model } from "mongoose";
-import { enumEstadoInscripcion } from "../enums/enums";
-import { inscripcion } from "../../interfaces/inscripcion";
-import { proyectoModelo } from "../proyecto/proyectoModelo";
-import { usuarioModelo } from "../usuario/usuarioModelo";
+import mongoose from "mongoose";
+import { proyectoModelo } from "../proyecto/proyectoModelo.js";
+import { usuarioModelo } from "../usuario/usuarioModelo.js";
 
-const inscripcionSchema = new Schema<inscripcion>({
+const { Schema, model } = mongoose;
+
+const inscripcionSchema = new Schema({
   proyecto: {
     type: Schema.Types.ObjectId,
     required: true,
@@ -17,20 +17,23 @@ const inscripcionSchema = new Schema<inscripcion>({
   },
   estado: {
     type: String,
-    enum: enumEstadoInscripcion,
+    enum: ['ACEPTADA', 'RECHAZADA', 'PENDIENTE'],
+    default: 'PENDIENTE',
   },
   fechaIngreso: {
     type: Date,
+    required: false,
   },
   fechaEgreso: {
     type: Date,
+    required: false,
   },
 });
 
 const inscripcionModelo = model(
-  "inscripcion",
+  "Inscripcion",
   inscripcionSchema,
-  "inscripciones"
+  "Inscripciones"
 );
 
 export { inscripcionModelo };

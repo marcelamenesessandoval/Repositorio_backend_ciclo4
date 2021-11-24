@@ -1,7 +1,8 @@
-import { connect } from "mongoose";
+import mongoose from "mongoose";
 
 const conectarDB = async () => {
-  return await connect(
+  return await mongoose
+  .connect(
     // process.env.DATABASE_URL
     "mongodb+srv://root:root@udea.nl7ay.mongodb.net/ofTheFiveBack?retryWrites=true&w=majority"
     )

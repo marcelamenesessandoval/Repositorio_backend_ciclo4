@@ -1,5 +1,8 @@
-import { gql } from "apollo-server-express";
-     
+// import { gql } from "apollo-server-express";
+
+import gql from "graphql-tag";
+
+
 const tiposUsuario = gql`
 
   type Usuario {

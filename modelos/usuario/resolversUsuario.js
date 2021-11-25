@@ -41,7 +41,7 @@ const resolversUsuario = {
         apellido: args.apellido,
         rol: args.rol,
         estado: args.estado,
-      });
+      }, {new: true});
       return usuarioEditado;
     },
 

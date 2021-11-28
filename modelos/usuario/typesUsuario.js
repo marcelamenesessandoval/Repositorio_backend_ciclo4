@@ -12,7 +12,7 @@ const tiposUsuario = gql`
     nombre: String!
     apellido: String!
     rol: enumRol!
-    estado: enumEstadoUsuario
+
   }
 
   type Query {
@@ -27,8 +27,8 @@ const tiposUsuario = gql`
       identificacion: String!
       nombre: String!
       apellido: String!
-      rol: enumRol!
-      estado: enumEstadoUsuario
+      estado: enumEstadoUsuario!
+      password: String!
     ): Usuario
 
     editarUsuario(

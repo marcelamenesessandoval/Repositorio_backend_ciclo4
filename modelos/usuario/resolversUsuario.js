@@ -39,7 +39,6 @@ const resolversUsuario = {
         identificacion: args.identificacion,
         nombre: args.nombre,
         apellido: args.apellido,
-        rol: args.rol,
         estado: args.estado,
       }, {new: true});
       return usuarioEditado;
